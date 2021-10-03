@@ -16,7 +16,7 @@ In this article, I'll be sharing with you on how to create a private blockchain 
 - Setting up an AWS instance running Ganache
 - Setting up security group to only allow your IP to access the blockchain
 - Running the blockchain
-- Dockerize the blockchain to have it run in background (Part 2 _Coming Soon_)
+- Containerise the blockchain to have it run in background and easier deployment (Part 2 _Coming Soon_)
 - Using Nginx to route your blockchain to a URI (Part 2 _Coming Soon_)
 - Request api token with Nginx (Part 2 _Coming Soon_)
 
@@ -60,8 +60,8 @@ For the start, let's create a small instance in AWS to deploy our blockchain. We
    - Create a `.env` file at the root folder and insert a variable `BLOCKCHAIN_IP_ADDRESS` (Get the **Public IPv4 address** of your instance)
    - Run `yarn && yarn start`
    - You should see balance of your first account of your blockchain
-     ![Output Test](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ep4rudvrjlz81cofitc.png)
+![Output Test](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ep4rudvrjlz81cofitc.png)
 
-## Congratulations!
+## :tada: Congratulations!
 
 You now have a running blockchain at your own dispense. In part 2 of my series, I will show you how to dockerize your blockchain so that you can startup a blockchain easily and have your blockchain programmatically accessible by using an API token.
