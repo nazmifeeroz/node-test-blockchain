@@ -9,6 +9,8 @@ series: Your very own blockchain
 
 This will be a 2 part series!
 
+I have been _fiddling_ in the blockchain world for a while trying to figure how the blockchain works and how to create one. There isn't one guide that helps one to build his very own blockchain! So I'm writing this article to help you speed up your process of building one. If you are interested to build a blockchain and desire to create your own private ethereum network, look no further.
+
 In this article, I'll be sharing with you on how to create a private blockchain from scratch with almost no cost. It's best used for testing your application code or smart contract that may contain bugs for attackers to exploit. By setting up your own private test blockchain, it helps to simulate the Ethereum blockchain before deploying it to the main network.
 
 ### This article will cover
@@ -39,7 +41,10 @@ For the start, let's create a small instance in AWS to deploy our blockchain. We
 2. Run the following commands:
    ```shell
    $ sudo apt-get update
-   $ sudo apt install
+   $ sudo apt install curl
+   $ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+   $ source ~/.profile
+   $ nvm install --lts
    ```
 3. Verify that `npm` is successfully installed
    ```shell
@@ -55,12 +60,13 @@ For the start, let's create a small instance in AWS to deploy our blockchain. We
    ```
    _Private IP should be **Private IPv4 addresses** of your instance_
 6. Test out your blockchain
-   - Keep the Ganache CLI running and open a new terminal tab.
-   - Clone this repository, https://github.com/nazmifeeroz/node-test-blockchain
-   - Create a `.env` file at the root folder and insert a variable `BLOCKCHAIN_IP_ADDRESS` (Get the **Public IPv4 address** of your instance)
-   - Run `yarn && yarn start`
-   - You should see balance of your first account of your blockchain
-![Output Test](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ep4rudvrjlz81cofitc.png)
+
+- Keep the Ganache CLI running and open a new terminal tab.
+- Clone this repository, https://github.com/nazmifeeroz/node-test-blockchain
+- Create a `.env` file at the root folder and insert a variable `BLOCKCHAIN_IP_ADDRESS` (Get the **Public IPv4 address** of your instance)
+- Run `yarn && yarn start`
+- You should see balance of your first account of your blockchain
+  ![Output Test](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ep4rudvrjlz81cofitc.png)
 
 ## :tada: Congratulations!
 
