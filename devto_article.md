@@ -24,7 +24,7 @@ In this article, I'll be sharing with you on how to create a private blockchain 
 
 # Setting up an AWS EC2 instance
 
-For the start, let's create a small instance in AWS to deploy our blockchain. We don't really need a big instance to create a blockchain.
+Let's start! Create a small instance in AWS to deploy our blockchain. The smallest instance will do!
 
 1. Head over to EC2 service homepage and click on `Launch Instance`.
 2. Choose the free tier eligible `Ubuntu Server 20.04 LTS (HVM), SSD Volume` type.
@@ -39,34 +39,58 @@ For the start, let's create a small instance in AWS to deploy our blockchain. We
 
 1. Connect into your newly created EC2 instance by **SSH** or using **Instance Connect**.
 2. Run the following commands:
-   ```shell
-   $ sudo apt-get update
-   $ sudo apt install curl
-   $ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-   $ source ~/.profile
-   $ nvm install --lts
-   ```
+    ```shell
+    $ sudo apt-get update
+    $ sudo apt install curl
+    $ curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    $ source ~/.profile
+    $ nvm install --lts
+    ```
 3. Verify that `npm` is successfully installed
-   ```shell
-   $ npm -v
-   ```
+    ```shell
+    $ npm -v
+    ```
 4. Install **Ganache CLI**
-   ```shell
-   $ sudo npm install -g ganache-cli
-   ```
+    ```shell
+    $ sudo npm install -g ganache-cli
+    ```
 5. Run Ganache
-   ```shell
-   $ ganache-cli --host "[private_ip_of_AWS_instance]"  --port 8545 --networkId 5777
-   ```
-   _Private IP should be **Private IPv4 addresses** of your instance_
-6. Test out your blockchain
+    ```shell
+    $ ganache-cli --host "[private_ip_of_AWS_instance]"  --port 8545 --networkId 5777
+    ```
 
-- Keep the Ganache CLI running and open a new terminal tab.
-- Clone this repository, https://github.com/nazmifeeroz/node-test-blockchain
-- Create a `.env` file at the root folder and insert a variable `BLOCKCHAIN_IP_ADDRESS` (Get the **Public IPv4 address** of your instance)
-- Run `yarn && yarn start`
-- You should see balance of your first account of your blockchain
-  ![Output Test](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ep4rudvrjlz81cofitc.png)
+    _Private IP should be **Private IPv4 addresses** of your instance_
+
+You should see a prompt that Ganache is listening on port 8545 to indicate you have a running blockchain! :tada:
+## Test out your blockchain
+
+I have created a small node app for you to connect to your blockchain and get the balance of one created account. I used [Web3 JS](https://web3js.readthedocs.io/en/v1.5.2/) to call the blockchain.
+
+1. In another tab in your terminal, clone this repository:
+    ```shell
+    $ git clone https://github.com/nazmifeeroz/node-test-blockchain
+    ```
+
+2. Duplicate `.env.example` into a new file `.env`
+    ```
+    $ cp .env.example .env
+    ```
+
+3. Get your `BLOCKCHAIN_IP_ADDRESS` from your EC2 instance console. This should be the **Private IPv4 address**
+
+4. Run the app
+
+    ```
+    $ yarn && yarn start
+    ```
+
+You should see the balance of your first account of your blockchain. :sunglasses:
+
+![Output Test](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/4ep4rudvrjlz81cofitc.png)
+
+### About the app
+
+If you would open up `main.js`, there's a `Main()` function that is fetching all the accounts available in your blockchain (default is 10 accounts). It then calls the `getBalance()` method with the first account address. That simple!
 
 ## :tada: Congratulations!
 
