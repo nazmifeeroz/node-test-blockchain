@@ -18,7 +18,7 @@ In this article, I'll be sharing with you on how to create a private blockchain 
 - Setting up an AWS instance running Ganache
 - Setting up security group to only allow your IP to access the blockchain
 - Running the blockchain
-- Containerise the blockchain to have it run in background and easier deployment (Part 2 _Coming Soon_)
+- Containerise the blockchain to have it run in background and easier deployment (Part 2)
 - Using Nginx to route your blockchain to a URI (Part 2 _Coming Soon_)
 - Request api token with Nginx (Part 2 _Coming Soon_)
 
