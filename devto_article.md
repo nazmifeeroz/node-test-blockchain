@@ -2,7 +2,7 @@
 title: Build your own remote private blockchain with AWS and Ganache
 published: true
 description: Build a blockchain from scratch at low cost for you to test for your development
-tags:
+tags: aws, blockchain, cloud
 cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6rjxsyts6q1zsamt31jl.jpg
 series: Your very own blockchain
 ---
