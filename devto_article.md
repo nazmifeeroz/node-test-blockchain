@@ -1,6 +1,6 @@
 ---
 title: Build your own remote private blockchain with AWS and Ganache
-published: false
+published: true
 description: Build a blockchain from scratch at low cost for you to test for your development
 tags:
 cover_image: https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6rjxsyts6q1zsamt31jl.jpg
@@ -22,7 +22,7 @@ In this article, I'll be sharing with you on how to create a private blockchain 
 - Using Nginx to route your blockchain to a URI (Part 2 _Coming Soon_)
 - Request api token with Nginx (Part 2 _Coming Soon_)
 
-# Setting up an AWS EC2 instance
+## Setting up an AWS EC2 instance
 
 Let's start! Create a small instance in AWS to deploy our blockchain. The smallest instance will do!
 
@@ -35,7 +35,7 @@ Let's start! Create a small instance in AWS to deploy our blockchain. The smalle
    ![Security Group](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/06j1fd05m6yjs2lwdfb5.png)
 5. Select Next and press Launch. On the `Select key pair` prompt. Select an existing key pair if you have one. Else create a new key pair. Press launch and wait until the Instance State gets to `Running`
 
-# Running the blockchain
+## Running the blockchain
 
 1. Connect into your newly created EC2 instance by **SSH** or using **Instance Connect**.
 2. Run the following commands:
@@ -62,6 +62,7 @@ Let's start! Create a small instance in AWS to deploy our blockchain. The smalle
     _Private IP should be **Private IPv4 addresses** of your instance_
 
 You should see a prompt that Ganache is listening on port 8545 to indicate you have a running blockchain! :tada:
+
 ## Test out your blockchain
 
 I have created a small node app for you to connect to your blockchain and get the balance of one created account. I used [Web3 JS](https://web3js.readthedocs.io/en/v1.5.2/) to call the blockchain.
@@ -95,3 +96,5 @@ If you would open up `main.js`, there's a `Main()` function that is fetching all
 ## :tada: Congratulations!
 
 You now have a running blockchain at your own dispense. In part 2 of my series, I will show you how to dockerize your blockchain so that you can startup a blockchain easily and have your blockchain programmatically accessible by using an API token.
+
+Cheers!
